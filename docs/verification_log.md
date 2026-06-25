@@ -1,6 +1,6 @@
 # Step 0: Gene Target Verification
 
-**Verification date:** 2026-06-25T04:22:47.481225
+**Verification date:** 2026-06-25T16:29:13.356309
 
 ## Summary
 - Total genes: 9
@@ -10,48 +10,45 @@
 
 ## Gene Verifications
 
-### Azospira suillum PS — PcrA (WP_011393897.1)
+### Azospira suillum PS — PcrA (G8QM55)
 - Status: **PASS**
-- Source: NCBI
-- Sequence length: 304 aa
+- Sequence length: 927 aa
+- Note: Dsui_0149; strain-PS-specific
 
-### Azospira suillum PS — PcrB (WP_011393898.1)
+### Azospira suillum PS — PcrB (G8QM54)
 - Status: **PASS**
-- Source: NCBI
-- Sequence length: 130 aa
+- Sequence length: 333 aa
+- Note: Dsui_0148; strain-PS-specific
 
-### Azospira suillum PS — Cld (WP_011393988.1)
+### Azospira suillum PS — Cld (E2DI02)
 - Status: **PASS**
-- Source: NCBI
-- Sequence length: 271 aa
+- Sequence length: 282 aa
+- Note: A. oryzae GR-1 ortholog; no PS-specific record available
 
-### Dechloromonas aromatica RCB — PcrA (NP_771648.1)
+### Dechloromonas aromatica RCB — PcrA (Q47CW6)
 - Status: **PASS**
-- Source: NCBI
-- Sequence length: 189 aa
+- Sequence length: 927 aa
+- Note: Daro_2584; strain-RCB-specific
 
-### Dechloromonas aromatica RCB — PcrB (NP_771649.1)
+### Dechloromonas aromatica RCB — PcrB (Q47CW7)
 - Status: **PASS**
-- Source: NCBI
-- Sequence length: 187 aa
+- Sequence length: 333 aa
+- Note: Daro_2583; strain-RCB-specific
 
-### Dechloromonas aromatica RCB — Cld (NP_771650.1)
+### Dechloromonas aromatica RCB — Cld (Q47CX0)
 - Status: **PASS**
-- Source: NCBI
-- Sequence length: 238 aa
+- Sequence length: 282 aa
+- Note: Daro_2580; strain-RCB-specific
 
-### Ideonella dechloratans — ClrA (WP_013085951.1)
+### Ideonella dechloratans — ClrA (P60068)
 - Status: **PASS**
-- Source: NCBI
-- Sequence length: 363 aa
+- Sequence length: 914 aa
 
-### Ideonella dechloratans — ClrB (WP_013085952.1)
+### Ideonella dechloratans — ClrB (P60069)
 - Status: **PASS**
-- Source: NCBI
-- Sequence length: 276 aa
+- Sequence length: 328 aa
 
-### Ideonella dechloratans — Cld (WP_013085953.1)
+### Ideonella dechloratans — Cld (Q9F437)
 - Status: **PASS**
-- Source: NCBI
-- Sequence length: 889 aa
+- Sequence length: 285 aa
 

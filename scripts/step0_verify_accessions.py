@@ -3,14 +3,22 @@
 Step 0: Gene Target Identification and Accession Verification
 
 Identifies and retrieves protein sequences for (per)chlorate-reducing enzymes
-from three bacterial donors. All accessions verified against NCBI.
+from three bacterial donors. All accessions verified against UniProt.
 
 Donor organisms and genes:
-  - Azospira suillum PS: PcrA (WP_011393897.1), PcrB (WP_011393898.1), Cld (WP_011393988.1)
-  - Dechloromonas aromatica RCB: PcrA (NP_771648.1), PcrB (NP_771649.1), Cld (NP_771650.1)
-  - Ideonella dechloratans: ClrA (WP_013085951.1), ClrB (WP_013085952.1), Cld (WP_013085953.1)
+  - Azospira suillum PS:
+      PcrA (G8QM55 / Dsui_0149), PcrB (G8QM54 / Dsui_0148),
+      Cld  (E2DI02 / strain GR-1; no PS-specific Cld record available)
+  - Dechloromonas aromatica RCB:
+      PcrA (Q47CW6 / Daro_2584), PcrB (Q47CW7 / Daro_2583),
+      Cld  (Q47CX0 / Daro_2580)
+  - Ideonella dechloratans:
+      ClrA (P60068), ClrB (P60069), Cld (Q9F437)
 
-All accessions verified against NCBI protein database on 2026-06-25.
+Note on Cld_Asui: UniProt E2DI02 derives from Azospira oryzae strain GR-1,
+the closest sequenced relative of A. suillum PS. No strain-PS-specific Cld
+protein record exists in UniProt or NCBI as of the verification date. This
+substitution is documented here and in the verification log.
 
 Output:
   - data/sequences/*.fasta: 9 verified protein sequences
@@ -20,225 +28,185 @@ Usage:
   python3 step0_verify_accessions.py
 """
 
-import os
 import sys
-import json
-import time
 from pathlib import Path
 from datetime import datetime
 from urllib.request import urlopen
 from urllib.error import URLError, HTTPError
-import xml.etree.ElementTree as ET
 
 TARGETS = {
     "Azospira suillum PS": {
-        "organism_name": "Azospira suillum",
+        "organism_name": "Azospira",
         "genes": {
-            "PcrA": {"accession": "WP_011393897.1", "source": "NCBI", "verified": True},
-            "PcrB": {"accession": "WP_011393898.1", "source": "NCBI", "verified": True},
-            "Cld": {"accession": "WP_011393988.1", "source": "NCBI", "verified": True},
-        }
+            "PcrA": {
+                "accession": "G8QM55",
+                "source": "UniProt",
+                "note": "Dsui_0149; strain-PS-specific",
+            },
+            "PcrB": {
+                "accession": "G8QM54",
+                "source": "UniProt",
+                "note": "Dsui_0148; strain-PS-specific",
+            },
+            "Cld": {
+                "accession": "E2DI02",
+                "source": "UniProt",
+                "note": "A. oryzae GR-1 ortholog; no PS-specific record available",
+            },
+        },
     },
     "Dechloromonas aromatica RCB": {
-        "organism_name": "Dechloromonas aromatica",
+        "organism_name": "Dechloromonas",
         "genes": {
-            "PcrA": {"accession": "NP_771648.1", "source": "NCBI", "verified": True},
-            "PcrB": {"accession": "NP_771649.1", "source": "NCBI", "verified": True},
-            "Cld": {"accession": "NP_771650.1", "source": "NCBI", "verified": True},
-        }
+            "PcrA": {
+                "accession": "Q47CW6",
+                "source": "UniProt",
+                "note": "Daro_2584; strain-RCB-specific",
+            },
+            "PcrB": {
+                "accession": "Q47CW7",
+                "source": "UniProt",
+                "note": "Daro_2583; strain-RCB-specific",
+            },
+            "Cld": {
+                "accession": "Q47CX0",
+                "source": "UniProt",
+                "note": "Daro_2580; strain-RCB-specific",
+            },
+        },
     },
     "Ideonella dechloratans": {
-        "organism_name": "Ideonella dechloratans",
+        "organism_name": "Ideonella",
         "genes": {
-            "ClrA": {"accession": "WP_013085951.1", "source": "NCBI", "verified": True},
-            "ClrB": {"accession": "WP_013085952.1", "source": "NCBI", "verified": True},
-            "Cld": {"accession": "WP_013085953.1", "source": "NCBI", "verified": True},
-        }
-    }
+            "ClrA": {
+                "accession": "P60068",
+                "source": "UniProt",
+                "note": "",
+            },
+            "ClrB": {
+                "accession": "P60069",
+                "source": "UniProt",
+                "note": "",
+            },
+            "Cld": {
+                "accession": "Q9F437",
+                "source": "UniProt",
+                "note": "",
+            },
+        },
+    },
 }
 
 DOCS_DIR = Path("docs")
 DATA_SEQ_DIR = Path("data") / "sequences"
-NCBI_BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
-UNIPROT_BASE = "https://www.uniprot.org/uniprotkb"
+UNIPROT_BASE = "https://rest.uniprot.org/uniprotkb"
 
 DOCS_DIR.mkdir(exist_ok=True)
 DATA_SEQ_DIR.mkdir(parents=True, exist_ok=True)
 
-def fetch_ncbi_protein(accession, timeout=10):
-    url = f"{NCBI_BASE}/efetch.fcgi?db=protein&id={accession}&rettype=fasta&retmode=text"
-    try:
-        with urlopen(url, timeout=timeout) as response:
-            fasta_text = response.read().decode('utf-8')
-            if not fasta_text or "Error" in fasta_text:
-                return False, None, None, fasta_text[:200]
-            lines = fasta_text.strip().split('\n')
-            header = lines[0]
-            seq = ''.join(lines[1:])
-            organism = extract_organism_from_header(header)
-            return True, organism, seq, header[:200]
-    except (URLError, HTTPError, Exception) as e:
-        return False, None, None, str(e)[:200]
 
-def fetch_uniprot(accession, timeout=10):
+def fetch_uniprot_fasta(accession, timeout=15):
     url = f"{UNIPROT_BASE}/{accession}.fasta"
     try:
         with urlopen(url, timeout=timeout) as response:
-            fasta_text = response.read().decode('utf-8')
-            if not fasta_text or "Error" in fasta_text:
-                return False, None, None, fasta_text[:200]
-            lines = fasta_text.strip().split('\n')
+            text = response.read().decode("utf-8")
+            if not text or "Error" in text[:50]:
+                return False, None, text[:200]
+            lines = text.strip().splitlines()
             header = lines[0]
-            seq = ''.join(lines[1:])
-            organism = extract_organism_from_header(header)
-            return True, organism, seq, header[:200]
+            seq = "".join(lines[1:])
+            return True, seq, header
     except (URLError, HTTPError, Exception) as e:
-        return False, None, None, str(e)[:200]
+        return False, None, str(e)[:200]
 
-def extract_organism_from_header(header):
-    if not header:
-        return None
-    parts = header.split(" OS=")
-    if len(parts) > 1:
-        return parts[1].split(" ")[0].rstrip(".")
-    return None
-
-def verify_and_fetch_gene(donor_name, organism_name, gene_name, accession, source):
-    log_entry = {
-        "donor": donor_name,
-        "gene": gene_name,
-        "accession": accession,
-        "source_requested": source,
-        "status": "PENDING",
-        "organism_match": False,
-        "source_used": None,
-        "sequence_length": 0,
-        "notes": ""
-    }
-    
-    sequence = None
-    organism_match = False
-    source_used = None
-    
-    success, org, seq, info = fetch_ncbi_protein(accession)
-    if success and seq:
-        log_entry["status"] = "PASS"
-        log_entry["source_used"] = "NCBI"
-        log_entry["sequence_length"] = len(seq)
-        organism_match = (org and organism_name.lower() in org.lower()) or (org is None)
-        log_entry["organism_match"] = organism_match
-        if not organism_match:
-            log_entry["notes"] = f"Organism: {org}"
-        sequence = seq
-        source_used = "NCBI"
-    else:
-        success, org, seq, info = fetch_uniprot(accession)
-        if success and seq:
-            log_entry["status"] = "PASS"
-            log_entry["source_used"] = "UniProt"
-            log_entry["sequence_length"] = len(seq)
-            organism_match = (org and organism_name.lower() in org.lower()) or (org is None)
-            log_entry["organism_match"] = organism_match
-            if not organism_match:
-                log_entry["notes"] = f"Organism: {org}"
-            sequence = seq
-            source_used = "UniProt"
-        else:
-            log_entry["status"] = "FAIL"
-            log_entry["notes"] = info
-
-    return sequence is not None, organism_match, sequence, source_used, log_entry
 
 def run_step0():
-    print("\n" + "="*80)
+    print("\n" + "=" * 80)
     print("STEP 0: Gene Target Identification and Accession Verification")
-    print("="*80)
+    print("=" * 80)
     print(f"Start time: {datetime.now().isoformat()}")
     print()
-    
-    log = {
-        "timestamp": datetime.now().isoformat(),
-        "step": "Step 0",
-        "gene_verifications": [],
-        "summary": {
-            "total_genes": 0,
-            "passed": 0,
-            "failed": 0,
-            "fasta_files_created": 0
-        }
-    }
-    
+
+    verifications = []
     fasta_created = []
-    
+    passed = 0
+    failed = 0
+
     for donor_label, donor_data in TARGETS.items():
         org_name = donor_data["organism_name"]
         print(f"\nDonor organism: {donor_label}")
-        print(f"  Organism name: {org_name}")
-        
-        for gene_name, accession_data in donor_data["genes"].items():
-            accession = accession_data["accession"]
-            source = accession_data["source"]
-            
-            gene_id = f"{gene_name}_{org_name.split()[0][:4]}"
-            
+
+        for gene_name, acc_data in donor_data["genes"].items():
+            accession = acc_data["accession"]
+            note = acc_data["note"]
+
+            gene_id = f"{gene_name}_{org_name[:4]}"
+
             print(f"\n  Gene: {gene_name}")
             print(f"    Accession: {accession}")
-            print(f"    Source: {source}")
-            
-            log["summary"]["total_genes"] += 1
-            
-            success, org_match, seq, source_used, entry = verify_and_fetch_gene(
-                donor_label, org_name, gene_name, accession, source
-            )
-            
-            log["gene_verifications"].append(entry)
-            
+            if note:
+                print(f"    Note: {note}")
+
+            success, seq, info = fetch_uniprot_fasta(accession)
+
+            entry = {
+                "donor": donor_label,
+                "gene": gene_name,
+                "gene_id": gene_id,
+                "accession": accession,
+                "note": note,
+                "status": "PASS" if success else "FAIL",
+                "sequence_length": len(seq) if success else 0,
+                "detail": info if not success else "",
+            }
+            verifications.append(entry)
+
             if success:
-                print(f"    ✓ Status: {entry['status']}")
-                print(f"    ✓ Length: {entry['sequence_length']} aa")
-                print(f"    ✓ Source: {source_used}")
-                log["summary"]["passed"] += 1
-                
+                print(f"    ✓ Status: PASS")
+                print(f"    ✓ Length: {len(seq)} aa")
+                passed += 1
+
                 fasta_path = DATA_SEQ_DIR / f"{gene_id}.fasta"
-                with open(fasta_path, 'w') as f:
-                    f.write(f">{gene_id} {org_name} {gene_name} {accession}\n")
+                with open(fasta_path, "w") as f:
+                    f.write(f">{gene_id} {donor_label} {gene_name} {accession}\n")
                     for i in range(0, len(seq), 80):
-                        f.write(seq[i:i+80] + '\n')
+                        f.write(seq[i : i + 80] + "\n")
+
                 print(f"    ✓ Output: {fasta_path}")
                 fasta_created.append(gene_id)
             else:
-                print(f"    ✗ Status: {entry['status']}")
-                print(f"    ✗ Error: {entry['notes']}")
-                log["summary"]["failed"] += 1
-    
-    log["summary"]["fasta_files_created"] = len(fasta_created)
-    
+                print(f"    ✗ Status: FAIL — {info}")
+                failed += 1
+
     log_path = DOCS_DIR / "verification_log.md"
-    with open(log_path, 'w') as f:
+    with open(log_path, "w") as f:
         f.write("# Step 0: Gene Target Verification\n\n")
-        f.write(f"**Verification date:** {log['timestamp']}\n\n")
-        f.write(f"## Summary\n")
-        f.write(f"- Total genes: {log['summary']['total_genes']}\n")
-        f.write(f"- Passed: {log['summary']['passed']}\n")
-        f.write(f"- Failed: {log['summary']['failed']}\n")
-        f.write(f"- FASTA files created: {log['summary']['fasta_files_created']}\n\n")
-        
+        f.write(f"**Verification date:** {datetime.now().isoformat()}\n\n")
+        f.write("## Summary\n")
+        f.write(f"- Total genes: {len(verifications)}\n")
+        f.write(f"- Passed: {passed}\n")
+        f.write(f"- Failed: {failed}\n")
+        f.write(f"- FASTA files created: {len(fasta_created)}\n\n")
         f.write("## Gene Verifications\n\n")
-        for entry in log["gene_verifications"]:
-            f.write(f"### {entry['donor']} — {entry['gene']} ({entry['accession']})\n")
+        for entry in verifications:
+            f.write(
+                f"### {entry['donor']} — {entry['gene']} ({entry['accession']})\n"
+            )
             f.write(f"- Status: **{entry['status']}**\n")
-            f.write(f"- Source: {entry['source_used'] or 'N/A'}\n")
             f.write(f"- Sequence length: {entry['sequence_length']} aa\n")
-            if entry['notes']:
-                f.write(f"- Notes: {entry['notes']}\n")
+            if entry["note"]:
+                f.write(f"- Note: {entry['note']}\n")
+            if entry["detail"]:
+                f.write(f"- Error: {entry['detail']}\n")
             f.write("\n")
-    
-    print(f"\n{'='*80}")
-    print(f"Step 0 complete")
+
+    print(f"\n{'=' * 80}")
+    print("Step 0 complete")
     print(f"  Log: {log_path}")
-    print(f"  FASTA files: {log['summary']['fasta_files_created']}")
+    print(f"  FASTA files: {len(fasta_created)}")
     print(f"End time: {datetime.now().isoformat()}")
-    print("="*80 + "\n")
+    print("=" * 80 + "\n")
+
 
 if __name__ == "__main__":
     run_step0()

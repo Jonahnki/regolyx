@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Step 7: Final Results Report
+Step 5: Final Results Report
 
 Combines outputs from:
 
 Step 2
 Step 3
-Step 6
+Step 4
 
 into a single publication-ready CSV.
 
@@ -53,11 +53,11 @@ def load_csv(path, key):
     }
 
 
-def run_step7():
+def run_step5():
 
     codon = load_csv(CODON_SUMMARY, "gene_id")
     structure = load_csv(STRUCTURE_SUMMARY, "gene_id")
-    models = load_csv(MODEL_SUMMARY, "model")
+    models = load_csv(MODEL_SUMMARY, "gene_id")
 
     genes = sorted(codon.keys())
 
@@ -110,4 +110,4 @@ def run_step7():
 
 
 if __name__ == "__main__":
-    run_step7()
+    run_step5()

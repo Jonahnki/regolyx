@@ -1,0 +1,552 @@
+{
+  "Cld_Azos": {
+    "project_id": "eeaa1a",
+    "status": "COMPLETED",
+    "models": [
+      {
+        "model_id": "02",
+        "status": "COMPLETED",
+        "gmqe": 0.89,
+        "coordinates_url": "https://swissmodel.expasy.org/project/eeaa1a/models/02.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/eeaa1a/models/02.cif.gz"
+      },
+      {
+        "model_id": "01",
+        "status": "COMPLETED",
+        "gmqe": 0.82,
+        "qmean_global": {
+          "avg_local_score": 0.91
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/eeaa1a/models/01.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/eeaa1a/models/01.cif.gz"
+      }
+    ],
+    "date_created": "2026-06-25T15:39:28.806441Z",
+    "project_title": "Regolyx_Cld_Azos",
+    "view_url": "https://swissmodel.expasy.org/project/eeaa1a/view"
+  },
+  "Cld_Dech": {
+    "project_id": "1879f6",
+    "status": "COMPLETED",
+    "models": [
+      {
+        "model_id": "02",
+        "status": "COMPLETED",
+        "gmqe": 0.89,
+        "coordinates_url": "https://swissmodel.expasy.org/project/1879f6/models/02.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/1879f6/models/02.cif.gz"
+      },
+      {
+        "model_id": "01",
+        "status": "COMPLETED",
+        "gmqe": 0.83,
+        "qmean_global": {
+          "avg_local_score": 0.91
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/1879f6/models/01.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/1879f6/models/01.cif.gz"
+      }
+    ],
+    "date_created": "2026-06-25T15:48:21.198466Z",
+    "project_title": "Regolyx_Cld_Dech",
+    "view_url": "https://swissmodel.expasy.org/project/1879f6/view"
+  },
+  "Cld_Ideo": {
+    "project_id": "ba2ec2",
+    "status": "COMPLETED",
+    "models": [
+      {
+        "model_id": "02",
+        "status": "COMPLETED",
+        "gmqe": 0.89,
+        "coordinates_url": "https://swissmodel.expasy.org/project/ba2ec2/models/02.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/ba2ec2/models/02.cif.gz"
+      },
+      {
+        "model_id": "01",
+        "status": "COMPLETED",
+        "gmqe": 0.75,
+        "qmean_global": {
+          "avg_local_score": 0.85
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/ba2ec2/models/01.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/ba2ec2/models/01.cif.gz"
+      }
+    ],
+    "date_created": "2026-06-25T15:57:39.213799Z",
+    "project_title": "Regolyx_Cld_Ideo",
+    "view_url": "https://swissmodel.expasy.org/project/ba2ec2/view"
+  },
+  "ClrA_Ideo": {
+    "project_id": "c418f2",
+    "status": "COMPLETED",
+    "models": [
+      {
+        "model_id": "01",
+        "status": "COMPLETED",
+        "gmqe": 0.94,
+        "coordinates_url": "https://swissmodel.expasy.org/project/c418f2/models/01.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/c418f2/models/01.cif.gz"
+      },
+      {
+        "model_id": "02",
+        "status": "COMPLETED",
+        "gmqe": 0.7,
+        "qmean_global": {
+          "avg_local_score": 0.74
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/c418f2/models/02.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/c418f2/models/02.cif.gz"
+      },
+      {
+        "model_id": "03",
+        "status": "COMPLETED",
+        "gmqe": 0.59,
+        "qmean_global": {
+          "avg_local_score": 0.61
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/c418f2/models/03.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/c418f2/models/03.cif.gz"
+      },
+      {
+        "model_id": "04",
+        "status": "COMPLETED",
+        "gmqe": 0.49,
+        "qmean_global": {
+          "avg_local_score": 0.51
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/c418f2/models/04.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/c418f2/models/04.cif.gz"
+      },
+      {
+        "model_id": "05",
+        "status": "COMPLETED",
+        "gmqe": 0.49,
+        "qmean_global": {
+          "avg_local_score": 0.51
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/c418f2/models/05.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/c418f2/models/05.cif.gz"
+      },
+      {
+        "model_id": "06",
+        "status": "COMPLETED",
+        "gmqe": 0.42,
+        "qmean_global": {
+          "avg_local_score": 0.46
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/c418f2/models/06.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/c418f2/models/06.cif.gz"
+      }
+    ],
+    "date_created": "2026-06-25T16:07:59.307776Z",
+    "project_title": "Regolyx_ClrA_Ideo",
+    "view_url": "https://swissmodel.expasy.org/project/c418f2/view"
+  },
+  "ClrB_Ideo": {
+    "project_id": "1c5aeb",
+    "status": "COMPLETED",
+    "models": [
+      {
+        "model_id": "01",
+        "status": "COMPLETED",
+        "gmqe": 0.96,
+        "coordinates_url": "https://swissmodel.expasy.org/project/1c5aeb/models/01.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/1c5aeb/models/01.cif.gz"
+      },
+      {
+        "model_id": "02",
+        "status": "COMPLETED",
+        "gmqe": 0.84,
+        "qmean_global": {
+          "avg_local_score": 0.78
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/1c5aeb/models/02.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/1c5aeb/models/02.cif.gz"
+      },
+      {
+        "model_id": "03",
+        "status": "COMPLETED",
+        "gmqe": 0.67,
+        "qmean_global": {
+          "avg_local_score": 0.69
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/1c5aeb/models/03.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/1c5aeb/models/03.cif.gz"
+      },
+      {
+        "model_id": "04",
+        "status": "COMPLETED",
+        "gmqe": 0.26,
+        "qmean_global": {
+          "avg_local_score": 0.42
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/1c5aeb/models/04.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/1c5aeb/models/04.cif.gz"
+      },
+      {
+        "model_id": "05",
+        "status": "COMPLETED",
+        "gmqe": 0.26,
+        "qmean_global": {
+          "avg_local_score": 0.34
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/1c5aeb/models/05.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/1c5aeb/models/05.cif.gz"
+      },
+      {
+        "model_id": "06",
+        "status": "COMPLETED",
+        "gmqe": 0.12,
+        "qmean_global": {
+          "avg_local_score": 0.39
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/1c5aeb/models/06.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/1c5aeb/models/06.cif.gz"
+      },
+      {
+        "model_id": "07",
+        "status": "COMPLETED",
+        "gmqe": 0.11,
+        "qmean_global": {
+          "avg_local_score": 0.5
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/1c5aeb/models/07.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/1c5aeb/models/07.cif.gz"
+      },
+      {
+        "model_id": "08",
+        "status": "COMPLETED",
+        "gmqe": 0.1,
+        "qmean_global": {
+          "avg_local_score": 0.48
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/1c5aeb/models/08.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/1c5aeb/models/08.cif.gz"
+      },
+      {
+        "model_id": "09",
+        "status": "COMPLETED",
+        "gmqe": 0.09,
+        "qmean_global": {
+          "avg_local_score": 0.53
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/1c5aeb/models/09.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/1c5aeb/models/09.cif.gz"
+      },
+      {
+        "model_id": "10",
+        "status": "COMPLETED",
+        "gmqe": 0.08,
+        "qmean_global": {
+          "avg_local_score": 0.36
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/1c5aeb/models/10.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/1c5aeb/models/10.cif.gz"
+      }
+    ],
+    "date_created": "2026-06-25T16:16:46.001714Z",
+    "project_title": "Regolyx_ClrB_Ideo",
+    "view_url": "https://swissmodel.expasy.org/project/1c5aeb/view"
+  },
+  "PcrA_Azos": {
+    "project_id": "7c3120",
+    "status": "COMPLETED",
+    "models": [
+      {
+        "model_id": "02",
+        "status": "COMPLETED",
+        "gmqe": 0.97,
+        "coordinates_url": "https://swissmodel.expasy.org/project/7c3120/models/02.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/7c3120/models/02.cif.gz"
+      },
+      {
+        "model_id": "01",
+        "status": "COMPLETED",
+        "gmqe": 0.93,
+        "qmean_global": {
+          "avg_local_score": 0.95
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/7c3120/models/01.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/7c3120/models/01.cif.gz"
+      },
+      {
+        "model_id": "05",
+        "status": "COMPLETED",
+        "gmqe": 0.48,
+        "qmean_global": {
+          "avg_local_score": 0.52
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/7c3120/models/05.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/7c3120/models/05.cif.gz"
+      },
+      {
+        "model_id": "03",
+        "status": "COMPLETED",
+        "gmqe": 0.47,
+        "qmean_global": {
+          "avg_local_score": 0.53
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/7c3120/models/03.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/7c3120/models/03.cif.gz"
+      },
+      {
+        "model_id": "04",
+        "status": "COMPLETED",
+        "gmqe": 0.44,
+        "qmean_global": {
+          "avg_local_score": 0.52
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/7c3120/models/04.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/7c3120/models/04.cif.gz"
+      },
+      {
+        "model_id": "06",
+        "status": "COMPLETED",
+        "gmqe": 0.43,
+        "qmean_global": {
+          "avg_local_score": 0.5
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/7c3120/models/06.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/7c3120/models/06.cif.gz"
+      }
+    ],
+    "date_created": "2026-06-25T16:23:18.190745Z",
+    "project_title": "Regolyx_PcrA_Azos",
+    "view_url": "https://swissmodel.expasy.org/project/7c3120/view"
+  },
+  "PcrA_Dech": {
+    "project_id": "f3c555",
+    "status": "COMPLETED",
+    "models": [
+      {
+        "model_id": "02",
+        "status": "COMPLETED",
+        "gmqe": 0.97,
+        "coordinates_url": "https://swissmodel.expasy.org/project/f3c555/models/02.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/f3c555/models/02.cif.gz"
+      },
+      {
+        "model_id": "01",
+        "status": "COMPLETED",
+        "gmqe": 0.91,
+        "qmean_global": {
+          "avg_local_score": 0.93
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/f3c555/models/01.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/f3c555/models/01.cif.gz"
+      },
+      {
+        "model_id": "03",
+        "status": "COMPLETED",
+        "gmqe": 0.68,
+        "qmean_global": {
+          "avg_local_score": 0.73
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/f3c555/models/03.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/f3c555/models/03.cif.gz"
+      },
+      {
+        "model_id": "04",
+        "status": "COMPLETED",
+        "gmqe": 0.47,
+        "qmean_global": {
+          "avg_local_score": 0.5
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/f3c555/models/04.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/f3c555/models/04.cif.gz"
+      },
+      {
+        "model_id": "05",
+        "status": "COMPLETED",
+        "gmqe": 0.42,
+        "qmean_global": {
+          "avg_local_score": 0.47
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/f3c555/models/05.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/f3c555/models/05.cif.gz"
+      }
+    ],
+    "date_created": "2026-06-25T16:41:52.081896Z",
+    "project_title": "Regolyx_PcrA_Dech",
+    "view_url": "https://swissmodel.expasy.org/project/f3c555/view"
+  },
+  "PcrB_Azos": {
+    "project_id": "e27c5c",
+    "status": "COMPLETED",
+    "models": [
+      {
+        "model_id": "01",
+        "status": "COMPLETED",
+        "gmqe": 0.99,
+        "qmean_global": {
+          "avg_local_score": 0.95
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/e27c5c/models/01.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/e27c5c/models/01.cif.gz"
+      },
+      {
+        "model_id": "02",
+        "status": "COMPLETED",
+        "gmqe": 0.28,
+        "qmean_global": {
+          "avg_local_score": 0.45
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/e27c5c/models/02.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/e27c5c/models/02.cif.gz"
+      },
+      {
+        "model_id": "03",
+        "status": "COMPLETED",
+        "gmqe": 0.12,
+        "qmean_global": {
+          "avg_local_score": 0.44
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/e27c5c/models/03.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/e27c5c/models/03.cif.gz"
+      },
+      {
+        "model_id": "04",
+        "status": "COMPLETED",
+        "gmqe": 0.12,
+        "qmean_global": {
+          "avg_local_score": 0.56
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/e27c5c/models/04.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/e27c5c/models/04.cif.gz"
+      },
+      {
+        "model_id": "05",
+        "status": "COMPLETED",
+        "gmqe": 0.1,
+        "qmean_global": {
+          "avg_local_score": 0.48
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/e27c5c/models/05.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/e27c5c/models/05.cif.gz"
+      },
+      {
+        "model_id": "06",
+        "status": "COMPLETED",
+        "gmqe": 0.09,
+        "qmean_global": {
+          "avg_local_score": 0.49
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/e27c5c/models/06.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/e27c5c/models/06.cif.gz"
+      },
+      {
+        "model_id": "07",
+        "status": "COMPLETED",
+        "gmqe": 0.08,
+        "qmean_global": {
+          "avg_local_score": 0.36
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/e27c5c/models/07.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/e27c5c/models/07.cif.gz"
+      },
+      {
+        "model_id": "08",
+        "status": "COMPLETED",
+        "gmqe": 0.06,
+        "qmean_global": {
+          "avg_local_score": 0.25
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/e27c5c/models/08.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/e27c5c/models/08.cif.gz"
+      }
+    ],
+    "date_created": "2026-06-25T16:53:41.274350Z",
+    "project_title": "Regolyx_PcrB_Azos",
+    "view_url": "https://swissmodel.expasy.org/project/e27c5c/view"
+  },
+  "PcrB_Dech": {
+    "project_id": "7db827",
+    "status": "COMPLETED",
+    "models": [
+      {
+        "model_id": "01",
+        "status": "COMPLETED",
+        "gmqe": 0.98,
+        "qmean_global": {
+          "avg_local_score": 0.94
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/7db827/models/01.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/7db827/models/01.cif.gz"
+      },
+      {
+        "model_id": "02",
+        "status": "COMPLETED",
+        "gmqe": 0.24,
+        "qmean_global": {
+          "avg_local_score": 0.46
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/7db827/models/02.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/7db827/models/02.cif.gz"
+      },
+      {
+        "model_id": "03",
+        "status": "COMPLETED",
+        "gmqe": 0.12,
+        "qmean_global": {
+          "avg_local_score": 0.44
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/7db827/models/03.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/7db827/models/03.cif.gz"
+      },
+      {
+        "model_id": "04",
+        "status": "COMPLETED",
+        "gmqe": 0.11,
+        "qmean_global": {
+          "avg_local_score": 0.56
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/7db827/models/04.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/7db827/models/04.cif.gz"
+      },
+      {
+        "model_id": "05",
+        "status": "COMPLETED",
+        "gmqe": 0.11,
+        "qmean_global": {
+          "avg_local_score": 0.51
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/7db827/models/05.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/7db827/models/05.cif.gz"
+      },
+      {
+        "model_id": "06",
+        "status": "COMPLETED",
+        "gmqe": 0.09,
+        "qmean_global": {
+          "avg_local_score": 0.55
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/7db827/models/06.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/7db827/models/06.cif.gz"
+      },
+      {
+        "model_id": "07",
+        "status": "COMPLETED",
+        "gmqe": 0.08,
+        "qmean_global": {
+          "avg_local_score": 0.32
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/7db827/models/07.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/7db827/models/07.cif.gz"
+      },
+      {
+        "model_id": "08",
+        "status": "COMPLETED",
+        "gmqe": 0.06,
+        "qmean_global": {
+          "avg_local_score": 0.24
+        },
+        "coordinates_url": "https://swissmodel.expasy.org/project/7db827/models/08.pdb.gz",
+        "modelcif_url": "https://swissmodel.expasy.org/project/7db827/models/08.cif.gz"
+      }
+    ],
+    "date_created": "2026-06-25T17:01:27.250067Z",
+    "project_title": "Regolyx_PcrB_Dech",
+    "view_url": "https://swissmodel.expasy.org/project/7db827/view"
+  }
+}
