@@ -279,6 +279,7 @@ Pipeline stages:
 6. Automated reporting
 
 All analyses can be reproduced from raw sequence files using the scripts contained in the `scripts/` directory.
+
 ---
 
 ## Data Availability
