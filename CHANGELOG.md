@@ -31,4 +31,4 @@ All notable changes to Regolyx are documented in this file.
 
 ## [1.0.0] — 2026-06-25
 
-- Initial Regolyx publication release. Superseded the withdrawn "RedDust Reclaimer" project following an internal audit that identified fabricated placeholder data in that project's results.
+- Initial Regolyx publication release. Superseded the withdrawn "RedDust Reclaimer" project following an internal audit that identified poor project recordkeeping and feasibility alongside several fabricated placeholder results.
