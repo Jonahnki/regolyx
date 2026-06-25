@@ -1,0 +1,10 @@
+gene_id,gmqe,qmean,identity,coverage,template,status
+Cld_Azos,0.82,0.91,,,,COMPLETED
+Cld_Dech,0.83,0.91,,,,COMPLETED
+Cld_Ideo,0.75,0.85,,,,COMPLETED
+ClrA_Ideo,0.7,0.74,,,,COMPLETED
+ClrB_Ideo,0.84,0.78,,,,COMPLETED
+PcrA_Azos,0.93,0.95,,,,COMPLETED
+PcrA_Dech,0.91,0.93,,,,COMPLETED
+PcrB_Azos,0.99,0.95,,,,COMPLETED
+PcrB_Dech,0.98,0.94,,,,COMPLETED
