@@ -1,0 +1,15 @@
+name: regolyx
+
+channels:
+  - conda-forge
+  - bioconda
+
+dependencies:
+  - python=3.13
+  - biopython
+  - pandas
+  - numpy
+  - requests
+  - beautifulsoup4
+  - lxml
+  - viennarna

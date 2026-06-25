@@ -1,0 +1,33 @@
+
+cff-version: 1.2.0
+
+title: Regolyx
+
+message: "If you use this repository, please cite it."
+
+type: software
+
+
+
+authors:
+
+  - family-names: Adedeji
+
+    given-names: John
+
+
+
+version: 1.0.0
+
+
+
+date-released: 2026-06-25
+
+
+
+repository-code: https://github.com/Jonahnki/regolyx
+
+
+
+license: MIT
+
